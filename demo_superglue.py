@@ -244,6 +244,13 @@ if __name__ == '__main__':
                     matching.superglue.config['match_threshold']))
             elif key == 'k':
                 opt.show_keypoints = not opt.show_keypoints
+            elif key == ' ':
+                # Pause on spacebar press.
+                # print('\nPaused. Press space to continue.')
+                while True:
+                    key = chr(cv2.waitKey(0) & 0xFF)
+                    if key == ' ':
+                        break
 
         timer.update('viz')
         timer.print()
